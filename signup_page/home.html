@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>web development project</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+         <div class="main">
+             <div class="navbar">
+                 <div class="icon">
+                     <h2 class="logo"><a href="home.html"><img class="logo1" src="logo.png"></a>  Demo</h2>
+                 </div> 
+
+                 <div class="menu">
+                     <ul>
+                         <li><a href="#">HOME</a></li>
+                         <li><a href="#">ABOUT</a></li>
+                         <li><a href="#">SERVICE</a></li>
+                         <li><a href="#">DESIGN</a></li>
+                         <li><a href="#">CONTACT</a></li>
+                     </ul>
+                 </div>
+
+                 <div class="search">
+                     <input class="srch" type="search" name="" placeholder="Type to Text">
+                     <a href="#"><button class="btn">Search</button></a>
+                 </div>
+
+             </div>
+
+             <div class="content">
+                <h1>Signup <br><span> Web</span> <br> Page</h1>
+                <p class="par">Hello! My name is Saurabh Mishra. I am pursuing B.Tech in CSE 
+				<br>This is the signup web page.</p>
+
+                   <button class="cn"><a href="#">JOIN US</a></button>
+
+                   <div class="form">
+                       <h2>Login Here</h2>
+                       <span id = "message" style="color:red; font-size: 15px; font-weight: bold;"> </span>
+                       <input type="text" id="t1" placeholder="Enter Username Here">
+                       <input type="password" id="t2" placeholder="Enter Password Here">
+                       <button type="submit" onclick="return verify()" class="btnn">Login</button>
+                       <script>
+                        function verify() {
+                        var uname = document.getElementById("t1").value;
+                        var pw = document.getElementById("t2").value;
+                        if(uname == "")
+                        {
+                            document.getElementById("message").innerHTML = "**Fill the username please!";
+                            return false;
+                        }
+                        //check empty password field
+                        if(pw == "") {
+                            document.getElementById("message").innerHTML = "**Fill the password please!";
+                            return false;
+                        }
+                        //minimum password length validation
+                        else if(pw.length < 8) {
+                            document.getElementById("message").innerHTML = "**Password length must be atleast 8 characters";
+                            return false;
+                        }
+
+                        //maximum length of password validation
+                        else if(pw.length > 15) {
+                            document.getElementById("message").innerHTML = "**Password length must not exceed 15 characters";
+                            return false;
+                        } 
+                        else {
+                            alert("Login Successful");
+                            window.location.href="home.html";
+                        }
+                        }
+                       </script>
+
+                       <p class="link">Don't have an Account<br>
+                       <a href="#">Sign up </a>here</p>
+                       <p class="liw">Log in With</p>
+
+                       <div class="icons">
+                           <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                           <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                           <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                           <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                           <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                           
+                       </div>
+                   </div>
+            </div>
+         </div>
+         <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    </body>
+
+</html>
